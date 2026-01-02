@@ -1,0 +1,109 @@
+/* ===== Main Section ===== */
+.main {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #121212;
+    padding: 16px;
+}
+
+/* ===== Form Box ===== */
+.form-box {
+    background: #1e1e2f;
+    width: 100%;
+    max-width: 380px;
+    padding: 24px 26px;
+    border-radius: 10px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.45);
+}
+
+/* ===== Form ===== */
+.form-box form {
+    display: flex;
+    flex-direction: column;
+}
+
+/* ===== Labels ===== */
+.form-box label {
+    color: #ffffff;
+    font-size: 13px;
+    margin-bottom: 4px;
+}
+
+/* ===== Inputs ===== */
+.form-box input {
+    padding: 7px 10px;
+    margin-bottom: 12px;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    font-size: 13px;
+    background: #2a2a40;
+    color: #ffffff;
+}
+
+.form-box input::placeholder {
+    color: #b5b5c5;
+}
+
+.form-box input:focus {
+    background: #2f2f4f;
+    box-shadow: 0 0 0 1px #00d4ff;
+}
+
+/* ===== Error Message ===== */
+.form-box p {
+    font-size: 12px;
+    margin-bottom: 8px;
+}
+
+/* ===== Button ===== */
+.form-box button {
+    margin-top: 6px;
+    padding: 9px;
+    font-size: 15px;
+    font-weight: 600;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background: #00d4ff;
+    color: #000;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.form-box button:hover {
+    background: #00b8e6;
+    transform: translateY(-2px);
+}
+
+/* ===== Responsive ===== */
+
+/* Tablet */
+@media (max-width: 768px) {
+    .form-box {
+        max-width: 360px;
+        padding: 22px;
+    }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+    .form-box {
+        padding: 18px;
+    }
+
+    .form-box label {
+        font-size: 12px;
+    }
+
+    .form-box input {
+        font-size: 12px;
+        padding: 6px 9px;
+    }
+
+    .form-box button {
+        font-size: 14px;
+        padding: 8px;
+    }
+}

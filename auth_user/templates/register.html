@@ -1,0 +1,45 @@
+{% extends 'main.html' %}
+{% load static %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/register.css' %}">
+{% endblock %}
+
+{% block content %}
+<section class="main">
+  <section class="form-box">
+
+    <form method="post" onsubmit="return validateForm()">
+      {% csrf_token %}
+
+      <label>First Name :</label>
+      <input type="text" name="first_name" id="first_name" required>
+
+      <label>Last Name :</label>
+      <input type="text" name="last_name" id="last_name" required>
+
+      <label>Username :</label>
+      <input type="text" name="username" id="username" required>
+
+      <label>Email :</label>
+      <input type="email" name="email" id="email" required>
+
+      <label>Password :</label>
+      <input type="password" name="password" id="password" required>
+
+      <p id="client-error" style="color:red; font-size:12px;"></p>
+
+      {% if error %}
+      <p style="color:red;">{{ error }}</p>
+      {% endif %}
+
+      <button type="submit">Register</button>
+    </form>
+
+  </section>
+</section>
+{% endblock %}
+
+{% block js %}
+<script src="{% static 'js/register.js' %}"></script>
+{% endblock %}
