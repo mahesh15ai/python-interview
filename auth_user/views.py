@@ -58,3 +58,5 @@ def login_(request):
 def logout_(request):
     logout(request)
     return redirect('login_')
+def reset_pass(request):
+    return render(request,'reset.html')
