@@ -9,7 +9,7 @@
     <a href="">About</a>
     <a href="">Course</a>
     <a href="">Services</a>
-    <a href="">Profile</a>
+    <a href="{% url 'profile' %}">Profile</a>
     <a href="{% url 'logout_' %}">Logout</a>
     {% else %}
     <a href="{% url 'login_' %}">Login</a>
