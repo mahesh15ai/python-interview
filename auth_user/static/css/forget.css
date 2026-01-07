@@ -1,0 +1,55 @@
+.fp-container {
+  min-height: 80vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #f4f6f9;
+}
+
+.fp-box {
+  background: #fff;
+  padding: 30px;
+  width: 350px;
+  border-radius: 8px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.fp-box h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.fp-form input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  outline: none;
+}
+
+.fp-form input:focus {
+  border-color: #4a90e2;
+}
+
+.fp-form button {
+  width: 100%;
+  padding: 10px;
+  background: #4a90e2;
+  border: none;
+  color: white;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.fp-form button:hover {
+  background: #357abd;
+}
+
+.fp-error {
+  color: red;
+  text-align: center;
+  margin-bottom: 10px;
+}

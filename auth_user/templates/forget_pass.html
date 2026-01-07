@@ -1,0 +1,41 @@
+{% extends 'main.html' %}
+{% load static %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/forget.css' %}">
+{% endblock %}
+{% block content %}
+
+<div class="fp-container">
+  <div class="fp-box">
+    <h2>Forgot Password</h2>
+
+    {% if error %}
+    <p class="fp-error">{{ error }}</p>
+    {% endif %}
+
+    <form method="post" class="fp-form">
+      {% csrf_token %}
+
+      {% if set_new %}
+      <input
+        type="password"
+        name="newpasw"
+        placeholder="Enter new password"
+        required
+      />
+      <button type="submit">Reset Password</button>
+      {% else %}
+      <input
+        type="email"
+        name="email"
+        placeholder="Enter your email"
+        required
+      />
+      <button type="submit">Verify Email</button>
+      {% endif %}
+    </form>
+  </div>
+</div>
+
+{% endblock %}

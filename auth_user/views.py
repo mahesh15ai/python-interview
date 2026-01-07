@@ -99,3 +99,34 @@ def reset_password(request):
                 context['new_pass'] = True  # Stay on new password form if empty
 
     return render(request, 'reset.html', context)
+
+def forgot_password(request):
+    context = {}
+
+    if request.method == 'POST':
+        # Step 1: verify email
+        if 'email' in request.POST:
+            email = request.POST.get('email')
+            user = User.objects.filter(email=email).first()
+
+            if user:
+                request.session['reset_user_id'] = user.id
+                context['set_new'] = True
+            else:
+                context['error'] = "Email not registered"
+
+        # Step 2: set new password
+        elif 'newpasw' in request.POST:
+            user_id = request.session.get('reset_user_id')
+            new_password = request.POST.get('newpasw')
+
+            if user_id and new_password:
+                user = User.objects.get(id=user_id)
+                user.set_password(new_password)
+                user.save()
+                request.session.flush()
+                return redirect('login_')
+
+            context['set_new'] = True
+
+    return render(request, 'forget_pass.html', context)
